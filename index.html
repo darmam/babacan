@@ -198,29 +198,6 @@
         const callBtn = document.querySelector('.phone-call-btn');
         const modal = document.getElementById('antiClickModal');
 
-        // 1. Sahte Tıklama Önleme Mekanizması
-        // Kullanıcı butona tıkladığında (aslında butonu kapatan şeffaf kalkan'a tıkladığında) modal açılır.
-        callShield.addEventListener('click', function(event) {
-            event.preventDefault(); // Varsayılan a:href davranışını engelle
-            modal.style.display = 'block';
-            callShield.style.display = 'none'; // Modal açıkken kalkanı gizle
-        });
-
-        // 2. Arama İşlemini Başlatma
-        function allowCall() {
-            closeModal();
-            // Arama numarasını doğrudan yönlendir
-            window.location.href = callBtn.href; 
-        }
-
-        // 3. Modalı Kapatma
-        function closeModal() {
-            modal.style.display = 'none';
-            // Modal kapandıktan sonra kalkanı tekrar aç
-            setTimeout(() => {
-                callShield.style.display = 'block'; 
-            }, 100); 
-        }
 
         // İPUCU: Gerçek tıklama olduğunda butona direkt gitmesi için kalkanı kaldırıyoruz
         // Bu kısım, kalkanın tam olarak ne zaman kalkacağını ayarlamak için eklenmiştir.

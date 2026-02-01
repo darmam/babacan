@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BABACAN Oto Çekici - İstanbul'un Güvenilir Çekici Hizmeti</title>
+    <title>Bay Kaptan Oto Çekici - İstanbul'un Güvenilir Çekici Hizmeti</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
     <style>
         :root {
-            --primary-color: #ffc107; /* Sarı - Çekici/Uyarı Rengi */
-            --secondary-color: #343a40; /* Koyu Gri/Siyah - Zemin Rengi */
-            --text-color: #fff;
-            --district-color: #0d6efd; /* Mavi */
+            --primary-color: #ffc107;
+            --secondary-color: #343a40;
+            --text-color: #ffffff;
+            --district-color: #0d6efd;
         }
 
         body {
@@ -20,10 +23,11 @@
         }
 
         .header-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://tuzlaotokurtarma.com.tr/BlogResim/blog-451cekici2.jpg');
+            background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+            url('https://tuzlaotokurtarma.com.tr/BlogResim/blog-451cekici2.jpg');
             background-size: cover;
+            background-position: center;
             padding: 100px 0;
-            color: white;
             text-align: center;
         }
 
@@ -31,52 +35,16 @@
             font-size: 1.5rem;
             padding: 15px 30px;
             animation: pulse 1.5s infinite;
-            transition: background-color 0.3s ease;
-        
-            z-index: 10;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
-            70% { box-shadow: 0 0 0 20px rgba(255, 193, 7, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
-        }
-
-        /* Sahte Tıklama Önleme Mekanizması */
-        .fake-click-shield {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-            z-index: 1000; /* Butondan daha yüksek */
-            cursor: pointer;
-            display: none; /* Başlangıçta gizli */
-        }
-        .header-section:hover .fake-click-shield {
-            display: block; /* Sadece fare üstüne gelince görünür yap */
-        }
-        /* JS ile açılıp kapanan pop-up stilizasyonu */
-        .popup-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 400px;
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            text-align: center;
+            0% { box-shadow: 0 0 0 0 rgba(255,193,7,0.5); }
+            70% { box-shadow: 0 0 0 20px rgba(255,193,7,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,193,7,0); }
         }
 
         .district-list {
-            columns: 3; /* 3 sütunlu liste */
+            columns: 3;
             list-style: none;
             padding: 0;
         }
@@ -96,81 +64,75 @@
 </head>
 <body>
 
-    <header class="header-section">
-        <div class="container">
-            <h1 class="display-2 fw-bold text-uppercase text-warning">BAY KAPTAN OTO ÇEKİCİ 🚨</h1>
-            <p class="lead my-4">İstanbul'un her noktasında, 7/24 Hızlı ve Güvenilir Çekici Hizmeti!</p>
-            <div class="position-relative d-inline-block">
-                <div class="fake-click-shield" id="callShield"></div>
-                
-                <a href="tel:+905305520289" class="btn btn-warning btn-lg phone-call-btn">
-                    <i class="fas fa-phone-alt"></i> HEMEN ARA: +90 530 552 02 89
-                </a>
-            </div>
-            <p class="mt-3 text-muted">7/24 Yol Yardım Hattı</p>
+<header class="header-section">
+    <div class="container">
+        <h1 class="display-2 fw-bold text-warning text-uppercase">
+            BAY KAPTAN OTO ÇEKİCİ 🚨
+        </h1>
+        <p class="lead my-4">
+            İstanbul'un her noktasında 7/24 hızlı ve güvenilir oto çekici hizmeti
+        </p>
+
+        <a href="tel:+905305520289" class="btn btn-warning btn-lg phone-call-btn">
+            <i class="fa-solid fa-phone"></i>
+            HEMEN ARA: +90 530 552 02 89
+        </a>
+
+        <p class="mt-3 text-muted">7/24 Yol Yardım Hattı</p>
+    </div>
+</header>
+
+<section class="container py-5">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <i class="fa-solid fa-truck fa-3x text-warning mb-3"></i>
+            <h3>Hızlı Çekici</h3>
+            <p>En kısa sürede konumunuza ulaşır, aracınızı güvenle taşırız.</p>
         </div>
-    </header>
-
-    <section class="container py-5">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <i class="fas fa-truck fa-3x text-warning mb-3"></i>
-                <h3 class="text-white">Hızlı Çekme</h3>
-                <p>En kısa sürede olay yerine ulaşıyor, aracınızı güvenle istediğiniz yere taşıyoruz.</p>
-            </div>
-            <div class="col-md-4">
-                <i class="fas fa-clock fa-3x text-warning mb-3"></i>
-                <h3 class="text-white">7/24 Kesintisiz</h3>
-                <p>Gece/Gündüz fark etmeksizin, her an yol yardımına hazırız.</p>
-            </div>
-            <div class="col-md-4">
-                <i class="fas fa-map-marked-alt fa-3x text-warning mb-3"></i>
-                <h3 class="text-white">İstanbul Geneli</h3>
-                <p>İstanbul'un tüm ilçe ve mahallelerine kesintisiz hizmet.</p>
-            </div>
+        <div class="col-md-4">
+            <i class="fa-solid fa-clock fa-3x text-warning mb-3"></i>
+            <h3>7/24 Hizmet</h3>
+            <p>Gece gündüz fark etmez, her an yanınızdayız.</p>
         </div>
-    </section>
-    
-    <hr class="border border-warning opacity-75">
+        <div class="col-md-4">
+            <i class="fa-solid fa-map-location-dot fa-3x text-warning mb-3"></i>
+            <h3>İstanbul Geneli</h3>
+            <p>Tüm İstanbul ilçelerine kesintisiz çekici hizmeti.</p>
+        </div>
+    </div>
+</section>
 
-    <section class="container py-5">
-        <h2 class="text-center mb-4 text-warning">🗺️ Hizmet Bölgelerimiz: TÜM İSTANBUL İLÇELERİ</h2>
-        <p class="text-center lead mb-5">Bay Kaptan Çekici olarak, İstanbul'un aşağıdaki tüm ilçelerinde anında hizmetinizdeyiz.</p>
+<hr class="border-warning opacity-75">
 
-        <ul class="district-list mx-auto">
-            <li>Adalar oto çekici </li>
-            <li>Arnavutköy oto çekici </li>
-            <li>Ataşehir oto çekici </li>
-            <li>Avcılar oto çekici </li>
-            <li>Bağcılar oto çekici </li>
-            <li>Bahçelievler oto çekici </li>
-            <li>Bakırköy oto çekici </li>
-            <li>Başakşehir oto çekici </li>
-            <li>Bayrampaşa oto çekici </li>
-            <li>Beşiktaş oto çekici </li>
-            <li>Beykoz oto çekici </li>
-            <li>Beylikdüzü oto çekici </li>
-            <li>Beyoğlu oto çekici </li>
-            <li>Büyükçekmece oto çekici </li>
-            <li>Çatalca oto çekici </li>
-            <li>Çekmeköy oto çekici </li>
-            <li>Esenler oto çekici </li>
-            <li>Esenyurt oto çekici </li>
-            <li>Eyüpsultan oto çekici </li>
-            <li>Fatih oto çekici </li>
-            <li>Gaziosmanpaşa oto çekici </li>
-            <li>Güngören oto çekici </li>
-            <li>Kadıköy oto çekici </li>
-            <li>Kağıthane oto çekici </li>
-            <li>Kartal oto çekici </li>
-            <li>Küçükçekmece oto çekici </li>
-            <li>Maltepe oto çekici </li>
-            <li>Pendik oto çekici </li>
-            <li>Sancaktepe oto çekici </li>
-            <li>Sarıyer oto çekici </li>
-            <li>Silivri oto çekici </li>
-            <li>Sultanbeyli oto çekici </li>
-            <li>Sultangazi oto çekici </li>
+<section class="container py-5">
+    <h2 class="text-center text-warning mb-4">
+        🗺️ Hizmet Verdiğimiz İstanbul İlçeleri
+    </h2>
+
+    <ul class="district-list mx-auto">
+        <li>Adalar oto çekici</li>
+        <li>Arnavutköy oto çekici</li>
+        <li>Ataşehir oto çekici</li>
+        <li>Avcılar oto çekici</li>
+        <li>Bağcılar oto çekici</li>
+        <li>Bahçelievler oto çekici</li>
+        <li>Bakırköy oto çekici</li>
+        <li>Başakşehir oto çekici</li>
+        <li>Bayrampaşa oto çekici</li>
+        <li>Beşiktaş oto çekici</li>
+        <li>Beykoz oto çekici</li>
+        <li>Beylikdüzü oto çekici</li>
+        <li>Beyoğlu oto çekici</li>
+        <li>Büyükçekmece oto çekici</li>
+        <li>Çatalca oto çekici</li>
+        <li>Çekmeköy oto çekici</li>
+        <li>Esenler oto çekici</li>
+        <li>Esenyurt oto çekici</li>
+        <li>Eyüpsultan oto çekici</li>
+        <li>Fatih oto çekici</li>
+        <li>Gaziosmanpaşa oto çekici</li>
+        <li>Güngören oto çekici</li>
+                    <li>Sultangazi oto çekici </li>
             <li>Şile oto çekici </li>
             <li>Şişli oto çekici </li>
             <li>Tuzla oto çekici </li>
@@ -180,50 +142,9 @@
         </ul>
     </section>
 
-   
+
     <footer class="bg-dark text-center py-4 mt-5">
         <p class="mb-0 text-white">&copy; 2025 Bay Kaptan Oto Çekici. Tüm Hakları Saklıdır.</p>
         <p class="mb-0 text-warning fw-bold">7/24 Acil Hattı: +90 530 552 02 89</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <script>
-        const callShield = document.getElementById('callShield');
-        const callBtn = document.querySelector('.phone-call-btn');
-        const modal = document.getElementById('antiClickModal');
-
-        // 1. Sahte Tıklama Önleme Mekanizması
-        // Kullanıcı butona tıkladığında (aslında butonu kapatan şeffaf kalkan'a tıkladığında) modal açılır.
-        callShield.addEventListener('click', function(event) {
-            event.preventDefault(); // Varsayılan a:href davranışını engelle
-            modal.style.display = 'block';
-            callShield.style.display = 'none'; // Modal açıkken kalkanı gizle
-        });
-
-        // 2. Arama İşlemini Başlatma
-        function allowCall() {
-            closeModal();
-            // Arama numarasını doğrudan yönlendir
-            window.location.href = callBtn.href; 
-        }
-
-        // 3. Modalı Kapatma
-        function closeModal() {
-            modal.style.display = 'none';
-            // Modal kapandıktan sonra kalkanı tekrar aç
-            setTimeout(() => {
-                callShield.style.display = 'block'; 
-            }, 100); 
-        }
-
-        // İPUCU: Gerçek tıklama olduğunda butona direkt gitmesi için kalkanı kaldırıyoruz
-        // Bu kısım, kalkanın tam olarak ne zaman kalkacağını ayarlamak için eklenmiştir.
-        callBtn.addEventListener('mouseenter', () => {
-             callShield.style.display = 'block'; // Farenin butona gelmesi ile kalkan devreye girer
-        });
-        callBtn.addEventListener('mouseleave', () => {
-             callShield.style.display = 'block'; // Çıkınca da devrede kalır
-        });
-    </script>
-</body>
-</html>

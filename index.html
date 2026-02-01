@@ -32,7 +32,7 @@
             padding: 15px 30px;
             animation: pulse 1.5s infinite;
             transition: background-color 0.3s ease;
-            position: relative; /* Sahte tıklama önleme için */
+        
             z-index: 10;
         }
 
@@ -98,13 +98,13 @@
 
     <header class="header-section">
         <div class="container">
-            <h1 class="display-2 fw-bold text-uppercase text-warning">BABACAN OTO ÇEKİCİ 🚨</h1>
+            <h1 class="display-2 fw-bold text-uppercase text-warning">BAY KAPTAN OTO ÇEKİCİ 🚨</h1>
             <p class="lead my-4">İstanbul'un her noktasında, 7/24 Hızlı ve Güvenilir Çekici Hizmeti!</p>
             <div class="position-relative d-inline-block">
                 <div class="fake-click-shield" id="callShield"></div>
                 
-                <a href="tel:+905054195861" class="btn btn-warning btn-lg phone-call-btn">
-                    <i class="fas fa-phone-alt"></i> HEMEN ARA: +90 505 419 5861
+                <a href="tel:+905305520289" class="btn btn-warning btn-lg phone-call-btn">
+                    <i class="fas fa-phone-alt"></i> HEMEN ARA: +90 530 552 02 89
                 </a>
             </div>
             <p class="mt-3 text-muted">7/24 Yol Yardım Hattı</p>
@@ -188,8 +188,8 @@
     </div>
 
     <footer class="bg-dark text-center py-4 mt-5">
-        <p class="mb-0 text-white">&copy; 2025 BABACAN Oto Çekici. Tüm Hakları Saklıdır.</p>
-        <p class="mb-0 text-warning fw-bold">7/24 Acil Hattı: +90 505 419 5861</p>
+        <p class="mb-0 text-white">&copy; 2025 Bay Kaptan Oto Çekici. Tüm Hakları Saklıdır.</p>
+        <p class="mb-0 text-warning fw-bold">7/24 Acil Hattı: +90 530 552 02 89</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -198,6 +198,29 @@
         const callBtn = document.querySelector('.phone-call-btn');
         const modal = document.getElementById('antiClickModal');
 
+        // 1. Sahte Tıklama Önleme Mekanizması
+        // Kullanıcı butona tıkladığında (aslında butonu kapatan şeffaf kalkan'a tıkladığında) modal açılır.
+        callShield.addEventListener('click', function(event) {
+            event.preventDefault(); // Varsayılan a:href davranışını engelle
+            modal.style.display = 'block';
+            callShield.style.display = 'none'; // Modal açıkken kalkanı gizle
+        });
+
+        // 2. Arama İşlemini Başlatma
+        function allowCall() {
+            closeModal();
+            // Arama numarasını doğrudan yönlendir
+            window.location.href = callBtn.href; 
+        }
+
+        // 3. Modalı Kapatma
+        function closeModal() {
+            modal.style.display = 'none';
+            // Modal kapandıktan sonra kalkanı tekrar aç
+            setTimeout(() => {
+                callShield.style.display = 'block'; 
+            }, 100); 
+        }
 
         // İPUCU: Gerçek tıklama olduğunda butona direkt gitmesi için kalkanı kaldırıyoruz
         // Bu kısım, kalkanın tam olarak ne zaman kalkacağını ayarlamak için eklenmiştir.
@@ -208,10 +231,5 @@
              callShield.style.display = 'block'; // Çıkınca da devrede kalır
         });
     </script>
-</body>
-</html>
-<a href="tel:+905054195861" class="call-btn">📞 Ara</a>
-<a href="https://wa.me/905054195861" class="wp-btn">💬 WhatsApp</a>
-
 </body>
 </html>
